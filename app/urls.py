@@ -27,6 +27,5 @@ router.register(r'car', CarViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
 ]
-
-urlpatterns += router.urls
