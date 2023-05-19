@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from car.views import CarAPIView
+from car.views import CarAPIView, CarAPIViewPut
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', CarAPIView.as_view())
+    path('', CarAPIView.as_view()),
+    path('<int:pk>/', CarAPIViewPut.as_view()),
 ]
